@@ -6,7 +6,7 @@ import axios from "axios";
 const Table = () => {
   const [name, setName] = useState([]);
   const [search, setSearch] = useState("");
-  const [filter, setFilter] = useState("");
+  const [filteredResult, setFilteredResult] = useState("");
 
   const fetchData = async () => {
     const { data } = await axios.get(`https://restcountries.com/v3.1/all`);
@@ -17,10 +17,26 @@ const Table = () => {
     fetchData();
   }, []);
 
-  const handleclick = () => {
-    setFilter(search);
-  };
-  console.log(filter);
+  //   const searchData = (searchValue) => {
+  //     setSearch(searchValue);
+  //     if (search !== "") {
+  //       const filteredData = name.filter((item) => {
+  //         return Object.values(item)
+  //           .join("")
+  //           .toLowerCase()
+  //           .includes(search.toLowerCase());
+  //       });
+  //       setFilteredResult(filteredData);
+  //     } else {
+  //       setFilteredResult(name);
+  //     }
+  //   };
+
+  //   function handleclick() {
+  //     setFilteredResult(search);
+  //   }
+
+  //   console.log(filter);
   return (
     <>
       <div className="input">
@@ -32,21 +48,19 @@ const Table = () => {
             setSearch(event.target.value);
           }}
         />
-        <button className="btn" onClick={handleclick}>
-          Search
-        </button>
+        <button className="btn" /*onClick={handleclick}*/>Search</button>
       </div>
       <table className="table">
         <thead>
           <th>No.</th>
           <th>Country Name</th>
-          <th>Country Flag</th>
+          <th>Flag</th>
         </thead>
         <tbody>
           {name.length !== 0 ? (
             <>
               {name
-                // .filter((d) => d.name.common === filter)
+                // .filter((d) => d.name.common === setFilteredResult)
                 .map((data, i) => {
                   return (
                     <tr key={i}>
