@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 241px;
+  height: 38px;
+  font-size: 16px;
+  background-color: rgb(255, 255, 255);
+  padding-top: 6px;
+  padding-left: 12px;
+  border-radius: 4px;
+  margin: 10px;
+  border: 1px solid rgb(206, 212, 218);
+}
+.input input {
+  border: none;
+  width: 200px;
+  outline: none;
+  height: 38px;
+}
+
+.btn {
+  font-size: 12px;
+  border: 1px solid rgb(222, 226, 230);
+  border-radius: 4px;
+  height: 24px;
+  padding-right: 4px;
+  padding-left: 4px;
+  background: none;
+  box-shadow: none;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table thead th {
+  border-bottom: 1px solid rgb(126, 128, 130);
+}
+
+.table tbody tr {
+  border-bottom: 1px solid rgb(222, 226, 230);
+}
+
+.img {
+  width: 20vw;
+  height: 100px;
+  margin: 20px;
+}
